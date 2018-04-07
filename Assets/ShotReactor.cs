@@ -9,11 +9,12 @@ public class ShotReactor : MonoBehaviour {
     public Text bulletNumText;
     public Text scoreText;
     int bulletNum = 20;
-    int score = 0;
+    public static int score = 0;
 
     // Use this for initialization
     void Start()
     {
+		score = 0;
         //信号を受信したときに、そのメッセージの処理を行う
         serialHandler.OnDataReceived += OnDataReceived;
     }

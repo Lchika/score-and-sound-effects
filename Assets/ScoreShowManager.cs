@@ -18,7 +18,7 @@ public class ScoreShowManager : MonoBehaviour {
 			rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
 			//rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
 			rankObjects [i].SetActive (false);
-			rankText [i].text = "Rank" + (i + 1).ToString() + " : " + (i * 10).ToString();
+			rankText [i].text = "Rank" + (i + 1).ToString() + " : " + ShotReactor.score.ToString();
 		}
 
 		StartCoroutine("showScoresAscendingOrder");
