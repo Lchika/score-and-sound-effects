@@ -1,3 +1,3 @@
 # score-and-sound-effects
 
-![sample](https://raw.githubusercontent.com/wiki/Lchika/score-and-sound-effects/Honeycam 2018-04-07 13-40-17.gif)
+![sample](https://raw.githubusercontent.com/wiki/Lchika/score-and-sound-effects/how-to-use_1.gif)
