@@ -1,0 +1,39 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ScoreShowManager : MonoBehaviour {
+
+	private const int NumberOfScore = 10;
+	GameObject scorePrefab;
+	public Text[] rankText = new Text[NumberOfScore];
+	public GameObject[] rankObjects = new GameObject[NumberOfScore];
+	private int i = 0;
+
+	// Use this for initialization
+	void Start () {
+		for (i = 0; i < NumberOfScore; i++) {
+			rankObjects [i] = GameObject.Find ("Rank" + (i + 1).ToString() + "Label");
+			rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
+			//rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
+			rankObjects [i].SetActive (false);
+			rankText [i].text = "Rank" + (i + 1).ToString() + " : " + (i * 10).ToString();
+		}
+
+		StartCoroutine("showScoresAscendingOrder");
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+	}
+
+	//「コルーチン」で呼び出すメソッド
+	private IEnumerator showScoresAscendingOrder(){
+		for (i = 0; i < NumberOfScore; i++) {
+			rankObjects [i].SetActive (true);
+			yield return new WaitForSeconds(1);  //1秒待つ
+		}
+	}
+}
