@@ -16,8 +16,8 @@ public class GameEndDirector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (float.Parse(bulletNumText.text) <= 0.0 || playTimeText.text == "0.00") {
-            SceneManager.LoadScene("RankingScene");
+		if (float.Parse(bulletNumText.text) <= 0.0 || playTimeText.text == "0.00" || Input.GetMouseButtonDown(0)) {
+            SceneManager.LoadScene("ResultScene");
         }
 	}
 }

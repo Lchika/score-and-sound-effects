@@ -15,7 +15,10 @@ public class GameStartDirector : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+		// 	左クリックされたらゲーム中画面に遷移する（デバッグ用）
+		if (Input.GetMouseButtonDown (0)) {
+			SceneManager.LoadScene("PlayingGameScene");
+		}
 	}
 
     //受信した信号(message)に対する処理
@@ -23,7 +26,7 @@ public class GameStartDirector : MonoBehaviour {
     {
         try
         {
-            if (message == "s") {
+			if (message == "s") {
                 SceneManager.LoadScene("PlayingGameScene");
             }
         }
