@@ -10,6 +10,9 @@ public class ShotReactor : MonoBehaviour {
     public Text scoreText;
     int bulletNum = 20;
     public static int score = 0;
+	private GameObject hitObject;
+	private GameObject hitImageObject;
+	private GameObject hitTextObject;
 
     // Use this for initialization
     void Start()
@@ -17,12 +20,24 @@ public class ShotReactor : MonoBehaviour {
 		score = 0;
         //信号を受信したときに、そのメッセージの処理を行う
         serialHandler.OnDataReceived += OnDataReceived;
+		hitObject = GameObject.Find ("HitLabel");
+		hitImageObject = GameObject.Find ("TargetImage");
+		hitTextObject = GameObject.Find ("HitText");
+		hitObject.SetActive (false);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+		// 右クリックされたら的命中処理を実行する（デバッグ用）
+		if (Input.GetMouseButtonDown (1)) {
+			ReactTargetHit ();
+			/*
+			hitObject.SetActive (true);
+			hitTextObject.SetActive(false);
+			hitImageObject.GetComponent<TargetImage> ().PerformAnimation();
+			*/
+		}
     }
 
     //受信した信号(message)に対する処理
@@ -38,9 +53,12 @@ public class ShotReactor : MonoBehaviour {
             }
             if (message == "p")
             {
+				ReactTargetHit();
+				/*
                 score++;
                 Debug.Log("score = " + score.ToString());
                 scoreText.text = score.ToString();
+                */
             }
         }
         catch (System.Exception e)
@@ -48,4 +66,13 @@ public class ShotReactor : MonoBehaviour {
             Debug.LogWarning(e.Message);
         }
     }
+
+	void ReactTargetHit(){
+		score++;
+		Debug.Log("score = " + score.ToString());
+		scoreText.text = score.ToString();
+		hitObject.SetActive (true);
+		hitTextObject.SetActive(false);
+		hitImageObject.GetComponent<TargetImage> ().PerformAnimation();
+	}
 }
