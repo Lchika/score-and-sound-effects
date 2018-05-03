@@ -8,7 +8,7 @@ public class TargetImage : MonoBehaviour {
 	private GameObject hitObject;
 	private RectTransform targetImage;
 	private GameObject hitText;
-	private Image targetImageImg;
+	//private Image targetImageImg;
 	private const int NumberOfMove = 3;
 	private const int NumberOfFlash = 2;
 	private const float WaitTimeTargetMove = 0.1f;
@@ -17,7 +17,7 @@ public class TargetImage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		hitObject = GameObject.Find ("HitLabel");
-		targetImageImg = GameObject.Find ("TargetImage").GetComponent<Image>();
+		//targetImageImg = GameObject.Find ("TargetImage").GetComponent<Image>();
 		targetImage = GameObject.Find ("TargetImage").GetComponent<RectTransform>();
 		hitText = GameObject.Find ("HitText");
 	}

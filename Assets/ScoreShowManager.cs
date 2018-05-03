@@ -17,11 +17,11 @@ public class ScoreShowManager : MonoBehaviour {
 			rankObjects [i] = GameObject.Find ("Rank" + (i + 1).ToString() + "Label");
 			rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
 			//rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
-			rankObjects [i].SetActive (false);
+			//rankObjects [i].SetActive (false);
 			rankText [i].text = "Rank" + (i + 1).ToString() + " : " + GameObject.Find ("RankingListManager").GetComponent<RankingListManager>().getScoreByRank(i + 1).ToString();
 		}
 
-		StartCoroutine("showScoresAscendingOrder");
+		//StartCoroutine("showScoresAscendingOrder");
 	}
 
 	// Update is called once per frame
