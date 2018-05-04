@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ResultScene.unity
     guid: 21d84ccca9ce0437cafaa833cc0d57b8
+  - enabled: 1
+    path: Assets/RegistationScene.unity
+    guid: 3168db418ec2c4d53a8adc5dff80f2df

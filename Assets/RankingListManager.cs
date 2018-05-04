@@ -61,6 +61,21 @@ public class RankingListManager : MonoBehaviour {
 		return rank;	// (保存しているランキング内に入らなかったら-1を返す)
 	}
 
+	public int getRankFromRankingList(int score){
+		int	rank = -1;					// 順位情報（返り値）
+
+		// 全ランキング情報を順に見ていく
+		for (int i = 0; i < NumberOfScoreInfo; i++) {
+			// 引数のスコアより小さいスコアのところまできたらスコア情報を上書きする
+			if (score >= scoreInfos [i].score) {
+				rank = i + 1;
+				break;
+			}
+		}
+
+		return rank;	// (保存しているランキング内に入らなかったら-1を返す)
+	}
+
 	public int getScoreByRank(int rank){
 		return scoreInfos [rank - 1].score;
 	}

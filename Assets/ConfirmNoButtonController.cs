@@ -17,7 +17,7 @@ public class ConfirmNoButtonController : MonoBehaviour {
 
 	/// ボタンをクリックした時の処理
 	public void OnClick() {
-		Debug.Log("Yes Button click");
+		Debug.Log("No Button click");
 		SceneManager.LoadScene("RankingScene");
 	}
 }

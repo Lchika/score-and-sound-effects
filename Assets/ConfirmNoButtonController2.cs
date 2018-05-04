@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ConfirmYesBottunController : MonoBehaviour {
+public class ConfirmNoButtonController2 : MonoBehaviour {
+
+	private GameObject confirmLabel;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +19,9 @@ public class ConfirmYesBottunController : MonoBehaviour {
 
 	/// ボタンをクリックした時の処理
 	public void OnClick() {
-		Debug.Log("Yes Button click");
-		SceneManager.LoadScene("RegistationScene");
+		Debug.Log("No Button2 click");
+		confirmLabel = GameObject.Find ("ConfirmLabel");
+		confirmLabel.SetActive (false);
+		Debug.Log("confirmLabel disabled");
 	}
 }
