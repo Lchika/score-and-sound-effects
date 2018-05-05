@@ -10,15 +10,19 @@ public class ScoreShowManager : MonoBehaviour {
 	public Text[] rankText = new Text[NumberOfScore];
 	public GameObject[] rankObjects = new GameObject[NumberOfScore];
 	private int i = 0;
+	private RankingListManager rankingListManager;
 
 	// Use this for initialization
 	void Start () {
+		rankingListManager = GameObject.Find ("RankingListManager").GetComponent<RankingListManager> ();
+
 		for (i = 0; i < NumberOfScore; i++) {
 			rankObjects [i] = GameObject.Find ("Rank" + (i + 1).ToString() + "Label");
 			rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
 			//rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
 			//rankObjects [i].SetActive (false);
-			rankText [i].text = "Rank" + (i + 1).ToString() + " : " + GameObject.Find ("RankingListManager").GetComponent<RankingListManager>().getScoreByRank(i + 1).ToString();
+			//rankText [i].text = "Rank" + (i + 1).ToString() + " : " + GameObject.Find ("RankingListManager").GetComponent<RankingListManager>().getScoreByRank(i + 1).ToString();
+			rankText [i].text = (i + 1).ToString() + "位 : " + rankingListManager.getNameByRank(i + 1) + " : " + rankingListManager.getScoreByRank(i + 1).ToString();
 		}
 
 		//StartCoroutine("showScoresAscendingOrder");

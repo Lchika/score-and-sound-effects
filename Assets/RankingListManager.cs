@@ -79,4 +79,8 @@ public class RankingListManager : MonoBehaviour {
 	public int getScoreByRank(int rank){
 		return scoreInfos [rank - 1].score;
 	}
+
+	public string getNameByRank(int rank){
+		return scoreInfos [rank - 1].userName;
+	}
 }
