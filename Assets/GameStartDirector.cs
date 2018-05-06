@@ -17,7 +17,7 @@ public class GameStartDirector : MonoBehaviour {
     void Update () {
 		// 	左クリックされたらゲーム中画面に遷移する（デバッグ用）
 		if (Input.GetMouseButtonDown (0)) {
-			SceneManager.LoadScene("PlayingGameScene");
+			SceneManager.LoadScene("WaitingStartScene");
 		}
 	}
 
@@ -27,7 +27,7 @@ public class GameStartDirector : MonoBehaviour {
         try
         {
 			if (message == "s") {
-                SceneManager.LoadScene("PlayingGameScene");
+				SceneManager.LoadScene("WaitingStartScene");
             }
         }
         catch (System.Exception e)

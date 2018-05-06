@@ -21,6 +21,6 @@ public class ConfirmYesButtonController2 : MonoBehaviour {
 	public void OnClick() {
 		Debug.Log("Yes Button click");
 		GameObject.Find ("RankingListManager").GetComponent<RankingListManager>().registerRankingList (ShotReactor.score, GameObject.Find ("Name").GetComponent<Text> ().text);
-		SceneManager.LoadScene("RankingScene");
+		SceneManager.LoadScene("AppreciationScene");
 	}
 }
