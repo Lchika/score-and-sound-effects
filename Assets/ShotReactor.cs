@@ -71,6 +71,8 @@ public class ShotReactor : MonoBehaviour {
 		score++;
 		Debug.Log("score = " + score.ToString());
 		scoreText.text = score.ToString();
+		GameObject scoreImageDirector = GameObject.Find ("ScoreImageDirector");
+		scoreImageDirector.GetComponent<ScoreImageDirector> ().FillScoreImage ();
 		hitObject.SetActive (true);
 		hitTextObject.SetActive(false);
 		hitImageObject.GetComponent<TargetImage> ().PerformAnimation();

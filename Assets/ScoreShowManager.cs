@@ -16,7 +16,15 @@ public class ScoreShowManager : MonoBehaviour {
 	void Start () {
 		rankingListManager = GameObject.Find ("RankingListManager").GetComponent<RankingListManager> ();
 
-		for (i = 0; i < NumberOfScore; i++) {
+		for (i = 0; i < 3; i++) {
+			rankObjects [i] = GameObject.Find ("Rank" + (i + 1).ToString() + "Label");
+			rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
+			//rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
+			//rankObjects [i].SetActive (false);
+			//rankText [i].text = "Rank" + (i + 1).ToString() + " : " + GameObject.Find ("RankingListManager").GetComponent<RankingListManager>().getScoreByRank(i + 1).ToString();
+			rankText [i].text = rankingListManager.getNameByRank(i + 1) + " : " + rankingListManager.getScoreByRank(i + 1).ToString();
+		}
+		for (i = 3; i < NumberOfScore; i++) {
 			rankObjects [i] = GameObject.Find ("Rank" + (i + 1).ToString() + "Label");
 			rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();
 			//rankText [i] = GameObject.Find ("Rank" + (i + 1).ToString()).GetComponent<Text> ();

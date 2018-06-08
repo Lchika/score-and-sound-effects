@@ -9,7 +9,8 @@ public class SerialHandler : MonoBehaviour
     public delegate void SerialDataReceivedEventHandler(string message);
     public event SerialDataReceivedEventHandler OnDataReceived;
 
-	public string portName = "/dev/tty.usbserial-AI045S5Q"; // ポート名(Macだと/dev/tty.usbmodem1421など)
+	//public string portName = "/dev/tty.usbserial-AI045S5Q"; // ポート名(Macだと/dev/tty.usbmodem1421など)
+	public string portName = "/dev/tty.usbserial-A7043RK5"; // pro mini
     public int baudRate = 115200;  // ボーレート(Arduinoに記述したものに合わせる)
 
     private SerialPort serialPort_;
@@ -76,7 +77,7 @@ public class SerialHandler : MonoBehaviour
     {
         while (isRunning_ && serialPort_ != null && serialPort_.IsOpen)
         {
-            Debug.Log("Read Serial Port!");
+            //Debug.Log("Read Serial Port!");
 			if (serialPort_.BytesToRead > 0) {
 				try {
 					//message_ = serialPort_.ReadLine();
