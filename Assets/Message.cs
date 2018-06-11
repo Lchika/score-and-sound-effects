@@ -17,4 +17,8 @@ public class Message : MonoBehaviour {
 	{
 		m_inputField.text += "\n";
 	}
+
+	public void OnRemoveString(){
+		m_inputField.text = m_inputField.text.Remove (m_inputField.text.Length - 1);
+	}
 }
