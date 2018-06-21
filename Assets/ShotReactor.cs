@@ -68,7 +68,7 @@ public class ShotReactor : MonoBehaviour {
     }
 
 	void ReactTargetHit(){
-		score++;
+		score += 10;
 		Debug.Log("score = " + score.ToString());
 		scoreText.text = score.ToString();
 		GameObject scoreImageDirector = GameObject.Find ("ScoreImageDirector");
