@@ -21,9 +21,19 @@ public class SerialHandler : MonoBehaviour
     private byte[] buff = new byte[1];
     private bool isNewMessageReceived_ = false;
 
+	public static SerialHandler singleton;
+
     void Awake()
     {
-        Open();
+		//　スクリプトが設定されていなければゲームオブジェクトを残しつつスクリプトを設定
+		if (singleton == null) {
+			DontDestroyOnLoad (gameObject);
+			singleton = this;
+			Open();
+			//　既にGameStartスクリプトがあればこのシーンの同じゲームオブジェクトを削除
+		} else {
+			Destroy (gameObject);
+		}
     }
 
     void Update()
@@ -37,7 +47,7 @@ public class SerialHandler : MonoBehaviour
 
     void OnDestroy()
     {
-        Close();
+        //Close();
     }
 
     private void Open()
@@ -98,6 +108,7 @@ public class SerialHandler : MonoBehaviour
         try
         {
             serialPort_.Write(message);
+			Debug.Log ("Write Serial Massage, " + message);
         }
         catch (System.Exception e)
         {

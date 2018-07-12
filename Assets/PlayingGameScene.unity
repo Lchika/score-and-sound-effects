@@ -566,6 +566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletNumText: {fileID: 746444785}
   playTimeText: {fileID: 477687992}
+  serialHandler: {fileID: 0}
 --- !u!4 &315821367
 Transform:
   m_ObjectHideFlags: 0
@@ -992,7 +993,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 30
 --- !u!222 &746444786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1382,7 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be22ceff4dc8d594cb925166f3f131d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serialHandler: {fileID: 2091047341}
+  serialHandler: {fileID: 0}
   bulletNumText: {fileID: 746444785}
   scoreText: {fileID: 813647221}
 --- !u!224 &1540475253
@@ -1689,7 +1690,7 @@ GameObject:
   - component: {fileID: 2091047342}
   - component: {fileID: 2091047341}
   m_Layer: 5
-  m_Name: SerialHandler
+  m_Name: _SerialHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1701,12 +1702,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2091047340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f4d1ab1e2ea01d44a38d0180b586688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: /dev/tty.usbserial-A7043RK5
+  portName: /dev/tty.usbmodem1411
   baudRate: 115200
 --- !u!224 &2091047342
 RectTransform:

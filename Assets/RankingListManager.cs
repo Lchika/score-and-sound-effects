@@ -27,8 +27,26 @@ public class RankingListManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		scoreInfos [0].userName = "test";
-		scoreInfos [0].score = 500;
+		scoreInfos [0].userName = "いちいのひと";
+		scoreInfos [0].score = 100;
+		scoreInfos [1].userName = "にいのひと";
+		scoreInfos [1].score = 90;
+		scoreInfos [2].userName = "さん";
+		scoreInfos [2].score = 80;
+		scoreInfos [3].userName = "よん";
+		scoreInfos [3].score = 70;
+		scoreInfos [4].userName = "ごいのひと";
+		scoreInfos [4].score = 60;
+		scoreInfos [5].userName = "ろくい";
+		scoreInfos [5].score = 50;
+		scoreInfos [6].userName = "七位の人";
+		scoreInfos [6].score = 40;
+		scoreInfos [7].userName = "はち";
+		scoreInfos [7].score = 30;
+		scoreInfos [8].userName = "きゅうい";
+		scoreInfos [8].score = 20;
+		scoreInfos [9].userName = "じゅうい";
+		scoreInfos [9].score = 10;
 	}
 	
 	// Update is called once per frame

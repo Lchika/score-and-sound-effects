@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-    float countTime = 60;
+    float countTime = 120;
     // Use this for initialization
     void Start()
     {

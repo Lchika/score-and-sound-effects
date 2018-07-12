@@ -8,7 +8,7 @@ public class ShotReactor : MonoBehaviour {
     public SerialHandler serialHandler;
     public Text bulletNumText;
     public Text scoreText;
-    int bulletNum = 20;
+    int bulletNum = 30;
     public static int score = 0;
 	private GameObject hitObject;
 	private GameObject hitImageObject;
@@ -18,6 +18,7 @@ public class ShotReactor : MonoBehaviour {
     void Start()
     {
 		score = 0;
+		serialHandler = GameObject.Find ("SerialHandler").GetComponent<SerialHandler>();
         //信号を受信したときに、そのメッセージの処理を行う
         serialHandler.OnDataReceived += OnDataReceived;
 		hitObject = GameObject.Find ("HitLabel");
