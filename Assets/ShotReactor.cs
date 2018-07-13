@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,8 +21,8 @@ public class ShotReactor : MonoBehaviour {
     {
 		score = 0;
 		serialHandler = GameObject.Find ("SerialHandler").GetComponent<SerialHandler>();
-        //信号を受信したときに、そのメッセージの処理を行う
-        serialHandler.OnDataReceived += OnDataReceived;
+		//信号を受信したときに、そのメッセージの処理を行う
+		serialHandler.OnDataReceived += OnDataReceived;
 		hitObject = GameObject.Find ("HitLabel");
 		hitImageObject = GameObject.Find ("TargetImage");
 		hitTextObject = GameObject.Find ("HitText");
@@ -69,7 +71,7 @@ public class ShotReactor : MonoBehaviour {
     }
 
 	void ReactTargetHit(){
-		score += 10;
+		score = int.Parse(scoreText.text) + 10;
 		Debug.Log("score = " + score.ToString());
 		scoreText.text = score.ToString();
 		GameObject scoreImageDirector = GameObject.Find ("ScoreImageDirector");

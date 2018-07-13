@@ -23,6 +23,8 @@ public class SerialHandler : MonoBehaviour
 
 	public static SerialHandler singleton;
 
+	public bool[] is_added_event = new bool[2];
+
     void Awake()
     {
 		//　スクリプトが設定されていなければゲームオブジェクトを残しつつスクリプトを設定
@@ -30,9 +32,11 @@ public class SerialHandler : MonoBehaviour
 			DontDestroyOnLoad (gameObject);
 			singleton = this;
 			Open();
-			//　既にGameStartスクリプトがあればこのシーンの同じゲームオブジェクトを削除
+			is_added_event [0] = false;
+			is_added_event [1] = false;
+		//　既にGameStartスクリプトがあればこのシーンの同じゲームオブジェクトを削除
 		} else {
-			Destroy (gameObject);
+			Destroy (this);
 		}
     }
 

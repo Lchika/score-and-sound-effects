@@ -9,8 +9,11 @@ public class GameStartDirector : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //信号を受信したときに、そのメッセージの処理を行う
-        serialHandler.OnDataReceived += OnDataReceived;
+		if (serialHandler.is_added_event[0] == false) {
+			//信号を受信したときに、そのメッセージの処理を行う
+			serialHandler.OnDataReceived += OnDataReceived;
+			serialHandler.is_added_event[0] = true;
+		}
     }
 
     // Update is called once per frame
